@@ -9,6 +9,7 @@ apply from: file(rootProject.file('module.gradle'))
 android {
     compileSdkVersion rootProject.ext.targetSdkVersion
     ndkVersion '25.2.9519653'
+    namespace 'zygisk.il2cppdumper'
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -34,6 +35,8 @@ repositories {
 }
 
 afterEvaluate {
+    // println "Gradle version: " + project.getGradle().getGradleVersion()
+    // println "Groovy version: " + GroovySystem.getVersion()
     android.libraryVariants.forEach { variant ->
         def variantCapped = variant.name.capitalize()
         def variantLowered = variant.name.toLowerCase()
