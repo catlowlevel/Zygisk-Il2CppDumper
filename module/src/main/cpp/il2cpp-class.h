@@ -1,3 +1,4 @@
+#include <cstdint>
 typedef uint16_t Il2CppChar;
 typedef uintptr_t il2cpp_array_size_t;
 typedef int32_t TypeDefinitionIndex;
@@ -39,24 +40,27 @@ typedef void *(*il2cpp_liveness_reallocate_callback)(void *ptr, size_t size, voi
 
 typedef void (*Il2CppFrameWalkFunc)(const Il2CppStackFrameInfo *info, void *user_data);
 
-typedef size_t(*Il2CppBacktraceFunc)(Il2CppMethodPointer *buffer, size_t maxSize);
+typedef size_t (*Il2CppBacktraceFunc)(Il2CppMethodPointer *buffer, size_t maxSize);
 
 typedef const Il2CppNativeChar *(*Il2CppSetFindPlugInCallback)(const Il2CppNativeChar *);
 
 typedef void (*Il2CppLogCallback)(const char *);
 
-typedef enum {
+typedef enum
+{
     IL2CPP_UNHANDLED_POLICY_LEGACY,
     IL2CPP_UNHANDLED_POLICY_CURRENT
 } Il2CppRuntimeUnhandledExceptionPolicy;
 
-typedef enum {
+typedef enum
+{
     IL2CPP_GC_MODE_DISABLED = 0,
     IL2CPP_GC_MODE_ENABLED = 1,
     IL2CPP_GC_MODE_MANUAL = 2
 } Il2CppGCMode;
 
-typedef enum Il2CppStat {
+typedef enum Il2CppStat
+{
     IL2CPP_STAT_NEW_OBJECT_COUNT,
     IL2CPP_STAT_INITIALIZED_CLASS_COUNT,
     IL2CPP_STAT_METHOD_COUNT,
@@ -67,7 +71,8 @@ typedef enum Il2CppStat {
     IL2CPP_STAT_INFLATED_TYPE_COUNT,
 } Il2CppStat;
 
-typedef enum Il2CppTypeEnum {
+typedef enum Il2CppTypeEnum
+{
     IL2CPP_TYPE_END = 0x00,
     IL2CPP_TYPE_VOID = 0x01,
     IL2CPP_TYPE_BOOLEAN = 0x02,
@@ -107,8 +112,10 @@ typedef enum Il2CppTypeEnum {
     IL2CPP_TYPE_IL2CPP_TYPE_INDEX = 0xff
 } Il2CppTypeEnum;
 
-typedef struct Il2CppType {
-    union {
+typedef struct Il2CppType
+{
+    union
+    {
         void *dummy;
         TypeDefinitionIndex klassIndex;
         const Il2CppType *type;
@@ -116,26 +123,30 @@ typedef struct Il2CppType {
         GenericParameterIndex genericParameterIndex;
         Il2CppGenericClass *generic_class;
     } data;
-    unsigned int attrs: 16;
-    Il2CppTypeEnum type: 8;
-    unsigned int num_mods: 6;
-    unsigned int byref: 1;
-    unsigned int pinned: 1;
+    unsigned int attrs : 16;
+    Il2CppTypeEnum type : 8;
+    unsigned int num_mods : 6;
+    unsigned int byref : 1;
+    unsigned int pinned : 1;
 } Il2CppType;
 
-typedef struct MethodInfo {
+typedef struct MethodInfo
+{
     Il2CppMethodPointer methodPointer;
 } MethodInfo;
 
-typedef struct Il2CppObject {
-    union {
+typedef struct Il2CppObject
+{
+    union
+    {
         Il2CppClass *klass;
         Il2CppVTable *vtable;
     };
     MonitorData *monitor;
 } Il2CppObject;
 
-typedef struct Il2CppArray {
+typedef struct Il2CppArray
+{
     Il2CppObject obj;
     Il2CppArrayBounds *bounds;
     il2cpp_array_size_t max_length;
